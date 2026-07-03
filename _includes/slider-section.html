@@ -1,0 +1,31 @@
+{% assign slider_caption = include.caption | default: include.scene %}
+{% assign slider_label = include.label | default: "Value" %}
+{% assign slider_min = include.min | default: 0 %}
+{% assign slider_max = include.max | default: 100 %}
+{% assign slider_step = include.step | default: 1 %}
+{% assign slider_value = include.value | default: 50 %}
+
+<section class="slider-section" data-slider-section>
+  <div class="slider-section-inner">
+    <div class="slider-copy">
+      {{ include.copy | markdownify }}
+    </div>
+
+    <figure class="slider-stage" aria-label="{{ slider_caption | escape }}">
+      <div class="slider-canvas" data-slider-scene="{{ include.scene | escape }}"></div>
+      <figcaption data-slider-caption>{{ slider_caption }}</figcaption>
+      <label class="slider-control">
+        <span>{{ slider_label }}</span>
+        <output data-slider-output>{{ slider_value }}%</output>
+        <input
+          data-slider-input
+          type="range"
+          min="{{ slider_min }}"
+          max="{{ slider_max }}"
+          step="{{ slider_step }}"
+          value="{{ slider_value }}">
+      </label>
+    </figure>
+  </div>
+</section>
+

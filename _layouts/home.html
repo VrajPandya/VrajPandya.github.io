@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<section class="home-intro">
+  <h1 class="visually-hidden">{{ site.title }}</h1>
+  <p>{{ page.intro | default: content | strip }}</p>
+</section>
+
+<section class="post-index" aria-labelledby="posts-heading">
+  <h2 id="posts-heading">Posts</h2>
+
+  {% if site.posts.size > 0 %}
+    <ol class="post-list">
+      {% for post in site.posts %}
+        <li class="post-list-item">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            {% if post.description %}
+              <p>{{ post.description }}</p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endif %}
+</section>

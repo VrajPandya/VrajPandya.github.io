@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<section class="about-page" aria-labelledby="about-page-heading">
+  <h1 id="about-page-heading">{{ site.title }}</h1>
+  <p class="about-page-intro">{{ page.intro | default: site.description }}</p>
+
+  <section id="about" class="about-section" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <div class="about-content">
+      {{ content }}
+    </div>
+  </section>
+</section>

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article class="post slider-post">
+  <header class="post-header slider-header">
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content slider-content">
+    {{ content }}
+  </div>
+</article>
+
+<script src="{{ '/assets/js/slider-animation.js' | relative_url }}" defer></script>
+{% if page.slider_script %}
+  <script src="{{ page.slider_script | relative_url }}" defer></script>
+{% endif %}
+

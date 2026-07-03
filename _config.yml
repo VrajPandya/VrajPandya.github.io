@@ -1,0 +1,29 @@
+title: Vraj Pandya
+description: Writing, engineering notes, and interactive essays.
+url: "https://vrajpandya.github.io"
+baseurl: ""
+author:
+  name: Vraj Pandya
+
+social_links:
+  - label: GitHub
+    icon: github
+    url: "https://github.com/VrajPandya"
+  - label: X
+    icon: x
+    url: "https://x.com/vrajspandya"
+  - label: LinkedIn
+    icon: linkedin
+    url: "https://www.linkedin.com/in/vrajspandya/"
+
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

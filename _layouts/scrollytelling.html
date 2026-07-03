@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article class="post scrolly-post">
+  <header class="post-header scrolly-header">
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+    {% if page.epigraph %}
+      <blockquote class="post-epigraph">
+        <p>{{ page.epigraph }}</p>
+        {% if page.epigraph_source %}
+          <cite>{{ page.epigraph_source }}</cite>
+        {% endif %}
+      </blockquote>
+    {% endif %}
+  </header>
+
+  <div class="post-content scrolly-content">
+    {{ content }}
+  </div>
+</article>
+
+<script src="{{ '/assets/js/scrollytelling.js' | relative_url }}" defer></script>
+{% if page.scrolly_script %}
+  <script src="{{ page.scrolly_script | relative_url }}" defer></script>
+{% endif %}
+

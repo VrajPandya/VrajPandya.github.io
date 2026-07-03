@@ -1,0 +1,16 @@
+{% assign scrolly_height = include.height | default: 145 %}
+{% assign scrolly_caption = include.caption | default: include.scene %}
+
+<section class="scrolly-section" data-scrolly-section style="--scrolly-height: {{ scrolly_height }}vh;">
+  <div class="scrolly-section-inner">
+    <div class="scrolly-copy">
+      {{ include.copy | markdownify }}
+    </div>
+
+    <figure class="scrolly-stage" aria-label="{{ scrolly_caption | escape }}">
+      <div class="scrolly-canvas" data-scene="{{ include.scene | escape }}"></div>
+      <figcaption data-scrolly-caption>{{ scrolly_caption }}</figcaption>
+    </figure>
+  </div>
+</section>
+
