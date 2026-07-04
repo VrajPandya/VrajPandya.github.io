@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<article class="post post-cpp">
+  <header class="cpp-hero">
+    <div class="cpp-hero-copy">
+      <p class="cpp-kicker">{{ page.kicker | default: "Systems essay" }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="cpp-deck">{{ page.description }}</p>
+      {% endif %}
+      <div class="cpp-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.read_time %}
+          <span>{{ page.read_time }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <aside class="cpp-hero-panel" aria-label="Post thesis">
+      <span class="cpp-panel-label">Thesis</span>
+      <p>{{ page.thesis }}</p>
+    </aside>
+  </header>
+
+  <div class="cpp-argument-map" aria-label="Argument map">
+    <div>
+      <span>01</span>
+      <strong>Hardware pressure</strong>
+    </div>
+    <div>
+      <span>02</span>
+      <strong>Zero-cost abstractions</strong>
+    </div>
+    <div>
+      <span>03</span>
+      <strong>Installed base</strong>
+    </div>
+    <div>
+      <span>04</span>
+      <strong>Toolchain gravity</strong>
+    </div>
+  </div>
+
+  <div class="post-content cpp-content">
+    {{ content }}
+  </div>
+</article>
