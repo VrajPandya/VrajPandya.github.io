@@ -2,6 +2,6 @@ _site/
 .jekyll-cache/
 .sass-cache/
 .bundle/
+.wrangler/
 vendor/bundle/
 Gemfile.lock
-
