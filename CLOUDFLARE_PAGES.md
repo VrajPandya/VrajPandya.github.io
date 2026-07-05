@@ -16,6 +16,22 @@ Root directory: /
 
 Cloudflare Pages reads `.ruby-version`, so builds should use Ruby 3.4.4.
 
+## GitHub Actions sync
+
+This repository includes `.github/workflows/deploy-cloudflare-pages.yml`, which
+builds the Jekyll site and deploys `_site` to the `vrajpandya-github-io`
+Cloudflare Pages project whenever `main` is pushed.
+
+Add these repository secrets in GitHub before relying on the workflow:
+
+```text
+CLOUDFLARE_ACCOUNT_ID=28cdbde24558fbf9a719b4ff1d54078d
+CLOUDFLARE_API_TOKEN=<Cloudflare API token with Cloudflare Pages edit access>
+```
+
+The current local Wrangler OAuth token can deploy from this machine, but GitHub
+Actions needs its own API token stored as a GitHub secret.
+
 ## Domain setup
 
 1. Add the domain to Cloudflare.
