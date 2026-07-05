@@ -34,9 +34,19 @@ Actions needs its own API token stored as a GitHub secret.
 
 ## Domain setup
 
-1. Add the domain to Cloudflare.
+The Pages project has these custom domains attached:
+
+```text
+optimizationtendencies.com
+www.optimizationtendencies.com
+```
+
+They remain pending until DNS points to Cloudflare.
+
+1. Add `optimizationtendencies.com` as a Cloudflare zone.
 2. In GoDaddy, replace the domain's nameservers with the two nameservers Cloudflare assigns.
-3. In Cloudflare Pages, open the project and add the apex domain plus `www` under Custom domains.
-4. Enable Web Analytics from the Pages project after the first deploy succeeds.
+3. After the zone is active, confirm that Cloudflare created Pages DNS records for the apex and `www`.
+4. Use Cloudflare Bulk Redirects to redirect `www.optimizationtendencies.com/*` to `https://optimizationtendencies.com/:splat` with a `301`, preserving path suffix and query string.
+5. Enable Web Analytics from the Pages project after the custom domain is active.
 
 GoDaddy remains the registrar. Cloudflare handles DNS, TLS, hosting, and analytics.
